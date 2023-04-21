@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipeMiddle : MonoBehaviour
+public class PipeGap : MonoBehaviour
 {
     public LogicManager logicManager;
 

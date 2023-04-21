@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipeMove : MonoBehaviour
+public class Pipe : MonoBehaviour
 {
     public float moveSpeed = 5;
     private float deadZone = -45;

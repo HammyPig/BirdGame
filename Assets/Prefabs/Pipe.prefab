@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 7430192567505559055}
   - component: {fileID: 7637341912699715463}
   m_Layer: 0
-  m_Name: Middle Space
+  m_Name: Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
