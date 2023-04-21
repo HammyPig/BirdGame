@@ -8,6 +8,7 @@ public class Bird : MonoBehaviour
     public float flapStrength;
     public LogicManager logicManager;
     private bool isDead = false;
+    private float rotation = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,13 @@ public class Bird : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true) {
             myRigidbody.velocity = flapStrength * Vector2.up;
         }
+
+        updateRotation();
+    }
+
+    void updateRotation() {
+        rotation = myRigidbody.velocity.y + 5;
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {
