@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  isBobbing: 0
 --- !u!1 &1723333832378329049
 GameObject:
   m_ObjectHideFlags: 0

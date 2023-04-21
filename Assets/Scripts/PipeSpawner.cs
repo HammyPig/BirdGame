@@ -25,7 +25,7 @@ public class PipeSpawner : MonoBehaviour
     }
 
     void spawnPipe() {
-        Instantiate(
+        GameObject newPipe = Instantiate(
             pipe,
             new Vector3(
                 transform.position.x,
@@ -34,5 +34,14 @@ public class PipeSpawner : MonoBehaviour
             ),
             transform.rotation
         );
+
+        Pipe p = newPipe.GetComponent<Pipe>();
+        
+        float randomValue = Random.value;
+        if (randomValue < 0.5) {
+            p.isBobbing = true;
+        } else {
+            p.isBobbing = false;
+        }
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Pipe : MonoBehaviour
 {
     public float moveSpeed = 5;
+    public bool isBobbing = false;
+    private int bobbingSpeed = 5;
     private float deadZone = -45;
 
     // Start is called before the first frame update
@@ -20,6 +22,14 @@ public class Pipe : MonoBehaviour
 
         if (transform.position.x <= deadZone) {
             Destroy(gameObject);
+        }
+
+        if (isBobbing) {
+            if (transform.position.y >= 6 || transform.position.y <= -6) {
+                bobbingSpeed = -bobbingSpeed;
+            }
+
+            transform.position = transform.position + (bobbingSpeed*Vector3.up) * Time.deltaTime;
         }
     }
 }
