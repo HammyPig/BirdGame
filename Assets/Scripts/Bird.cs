@@ -7,8 +7,10 @@ public class Bird : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float flapStrength;
     public LogicManager logicManager;
+    public Transform birdWing;
     private bool isDead = false;
     private float rotation = 0;
+    private float wingScale = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +28,17 @@ public class Bird : MonoBehaviour
         }
 
         updateRotation();
+        updateBirdWing();
     }
 
     void updateRotation() {
         rotation = myRigidbody.velocity.y + 5;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, rotation);
+    }
+
+    void updateBirdWing() {
+        wingScale = myRigidbody.velocity.y / 16 + 0.4f;      
+        birdWing.localScale = new Vector3(1, wingScale, 1);
     }
     
     private void OnCollisionEnter2D(Collision2D collision) {
