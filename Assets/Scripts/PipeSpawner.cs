@@ -43,5 +43,19 @@ public class PipeSpawner : MonoBehaviour
         } else {
             p.isBobbing = false;
         }
+        
+        float randomOffset = Random.Range(p.minOffset, p.maxOffset);
+        p.topPipe.transform.position = new Vector3(
+            p.topPipe.transform.position.x,
+            p.topPipe.transform.position.y + randomOffset,
+            p.topPipe.transform.position.z
+        );
+
+        randomOffset = Random.Range(p.minOffset, p.maxOffset);
+        p.bottomPipe.transform.position = new Vector3(
+            p.bottomPipe.transform.position.x,
+            p.bottomPipe.transform.position.y + randomOffset,
+            p.bottomPipe.transform.position.z
+        );
     }
 }

@@ -6,8 +6,12 @@ public class Pipe : MonoBehaviour
 {
     public float moveSpeed = 5;
     public bool isBobbing = false;
+    public GameObject topPipe;
+    public GameObject bottomPipe;
     private int bobbingSpeed = 5;
     private float deadZone = -45;
+    public float minOffset = -2;
+    public float maxOffset = 2;
 
     // Start is called before the first frame update
     void Start()
